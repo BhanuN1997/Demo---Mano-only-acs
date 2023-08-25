@@ -4,6 +4,7 @@ import chatgpt from "../../public/images/chatgpt.png";
 import bard from "../../public/images/bard.png";
 import { data } from "../utils/data";
 import Image from "next/image";
+import intro from "../../public/images/intro.png";
 import Link from "next/link";
 import introduction from "../../public/images/introduction.svg";
 
@@ -50,24 +51,6 @@ function Information({ id }: { id: string }) {
                   alt="image_"
                   className="max-w-[600px] w-[80%] h-auto ml-5 my-6 rounded-2xl"
                 />
-              )}
-              {information.note && (
-                <div className="text-base cursor-default text-[#454545bd]">
-                  <div className="my-2">
-                    <span className="rounded-md bg-[#e51616b9] text-white px-2 py-0.5">
-                      Note:
-                    </span>
-                  </div>
-                  <div className="text-sm">
-                    This extension works only on websites
-                    &#40;www.example.com&#41;. It is not effective:
-                    <div className="flex flex-col gap-0.5 ml-2 mt-1">
-                      <div>- New tabs without loaded websites</div>
-                      <div>- Extension web store pages</div>
-                      <div>- Extension://pages</div>
-                    </div>
-                  </div>
-                </div>
               )}
             </div>
           ))}
@@ -139,8 +122,35 @@ function Information({ id }: { id: string }) {
                 style={{ border: "1px solid rgb(0,0,0,0.1)" }}
               >
                 Press <span className="text-[#800DB6]">❛ALT + W❜</span> for Full
-                Screen Chat
+                Screen
               </div>
+            </div>
+          </div>
+          <div
+            className="flex flex-row justify-between p-6 my-10 rounded-xl bg-[#f2a6e716]"
+            style={{ border: "1px solid rgb(0,0,0,0.1)" }}
+          >
+            <div className="text-base cursor-default text-[#454545bd]">
+              <div className="my-2">
+                <span className="rounded-md bg-[#e51616b9] text-white px-2 py-0.5">
+                  Adjust shortcuts:
+                </span>
+              </div>
+              <div className="flex flex-col gap-2 mb-3 mt-4">
+                <div>Step 1: Go to: chrome://extensions/shortcuts</div>
+                <div>Step 2: Change the shortcuts as per your convenience</div>
+              </div>
+              <div className="text-sm">
+                Note: If you are a Bing/Naver user, kindly replace "chrome" with
+                Bing or Naver. eg: Edge://extensions/shortcuts
+              </div>
+            </div>
+            <div className="flex">
+              <Image
+                src={intro}
+                alt="Login to Bard and ChatGPT"
+                className="w-[90%] h-auto"
+              />
             </div>
           </div>
         </div>

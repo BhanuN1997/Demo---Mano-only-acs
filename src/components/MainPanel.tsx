@@ -23,7 +23,7 @@ function MainPanel() {
               className="relative w-[15vw] flex items-center justify-center cursor-pointer"
             >
               <div
-                className={`absolute  w-full h-[2px] top-6 ${
+                className={`absolute  w-full h-[2px] top-4 ${
                   element.index <= activeTab.index
                     ? "bg-violet-600"
                     : "bg-slate-400"
@@ -31,7 +31,7 @@ function MainPanel() {
               />
 
               <div
-                className={`z-10 w-12 h-12 rounded-full text-white flex items-center justify-center ${
+                className={`z-10 w-8 h-8 rounded-full text-white flex items-center justify-center ${
                   element.index <= activeTab.index
                     ? "bg-violet-600"
                     : "bg-slate-400"
@@ -43,7 +43,7 @@ function MainPanel() {
           );
         })}
       </section>
-      <section className="w-[75vw] pt-16 px-4 flex flex-col gap-3 overflow-y-auto overflow-x-hidden">
+      <section className="w-[75vw] pt-4 px-4 flex flex-col gap-3 overflow-y-auto overflow-x-hidden">
         <Information id={activeTab.title} />
       </section>
     </div>

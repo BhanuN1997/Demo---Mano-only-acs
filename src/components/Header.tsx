@@ -11,6 +11,11 @@ function Header() {
         <span className="font-semibold text-xl">Getting Started</span>
       </div>
 
+      <div className="text-[#56033F] text-sm">
+        ❛We automated legs, then arms, then fingers, and now brains❜ - Benedict
+        Evans
+      </div>
+
       <Link
         target="_blank"
         rel="noreferrer"

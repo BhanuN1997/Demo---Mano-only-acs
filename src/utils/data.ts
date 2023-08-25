@@ -10,6 +10,7 @@ import settings from "../../public/images/settings.png";
 export const data: any = {
   introduction: {
     heading: "Introduction",
+    note: true,
   },
   chatwindow: {
     heading: "Chat Window",
@@ -109,9 +110,6 @@ export const data: any = {
       },
       {
         spimg: { exists: true, src: settings },
-      },
-      {
-        note: true,
       },
     ],
   },
