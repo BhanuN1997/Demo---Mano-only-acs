@@ -13,25 +13,31 @@ function MainPanel() {
         className="mx-auto flex flex-row items-center select-none px-7 py-3 my-3 rounded-xl"
         style={{ border: "1px solid rgb(0,0,0,0.1)" }}
       >
-        {slides.map((element, index) => {
+        {slides.map((element) => {
           return (
             <div
               key={element.key}
-              onClick={() => setActiveTab({ index, title: element.key })}
+              onClick={() =>
+                setActiveTab({ index: element.index, title: element.key })
+              }
               className="relative w-[15vw] flex items-center justify-center cursor-pointer"
             >
               <div
                 className={`absolute  w-full h-[2px] top-6 ${
-                  index <= activeTab.index ? "bg-violet-600" : "bg-slate-400"
+                  element.index <= activeTab.index
+                    ? "bg-violet-600"
+                    : "bg-slate-400"
                 }`}
               />
 
               <div
                 className={`z-10 w-12 h-12 rounded-full text-white flex items-center justify-center ${
-                  index <= activeTab.index ? "bg-violet-600" : "bg-slate-400"
+                  element.index <= activeTab.index
+                    ? "bg-violet-600"
+                    : "bg-slate-400"
                 }`}
               >
-                {index + 1}
+                {element.index + 1}
               </div>
             </div>
           );

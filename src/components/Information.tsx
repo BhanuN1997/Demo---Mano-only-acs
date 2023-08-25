@@ -17,7 +17,14 @@ function Information({ id }: { id: string }) {
             <div
               key={index}
               className="flex flex-col p-4 rounded-2xl"
-              style={{ border: "1px solid rgb(0,0,0,0.2)" }}
+              style={
+                information.note
+                  ? {
+                      border: "1px solid rgb(0,0,0,0.2)",
+                      background: "rgb(242,166,230,0.2)",
+                    }
+                  : { border: "1px solid rgb(0,0,0,0.2)" }
+              }
             >
               {information.heading && (
                 <div className="text-[1.1rem] font-semibold">
@@ -43,6 +50,24 @@ function Information({ id }: { id: string }) {
                   alt="image_"
                   className="max-w-[600px] w-[80%] h-auto ml-5 my-6 rounded-2xl"
                 />
+              )}
+              {information.note && (
+                <div className="text-base cursor-default text-[#454545bd]">
+                  <div className="my-2">
+                    <span className="rounded-md bg-[#e51616b9] text-white px-2 py-0.5">
+                      Note:
+                    </span>
+                  </div>
+                  <div className="text-sm">
+                    This extension works only on websites
+                    &#40;www.example.com&#41;. It is not effective:
+                    <div className="flex flex-col gap-0.5 ml-2 mt-1">
+                      <div>- New tabs without loaded websites</div>
+                      <div>- Extension web store pages</div>
+                      <div>- Extension://pages</div>
+                    </div>
+                  </div>
+                </div>
               )}
             </div>
           ))}

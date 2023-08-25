@@ -110,6 +110,9 @@ export const data: any = {
       {
         spimg: { exists: true, src: settings },
       },
+      {
+        note: true,
+      },
     ],
   },
 };
