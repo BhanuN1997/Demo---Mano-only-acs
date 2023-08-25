@@ -4,111 +4,157 @@ import chatgpt from "../../public/images/chatgpt.png";
 import bard from "../../public/images/bard.png";
 import { data } from "../utils/data";
 import Image from "next/image";
+import intro from "../../public/images/intro.png";
+import Link from "next/link";
+import introduction from "../../public/images/introduction.svg";
 
 function Information({ id }: { id: string }) {
   return (
     <>
-      {data[id].heading && (
-        <p className="text-xl font-bold">{data[id].heading}</p>
-      )}
-      {data[id].info.map((element: any, index: any) => {
-        return (
-          <aside className="max-w-[70%] flex flex-col gap-3" key={index}>
-            {element.alertnode && (
-              <p className="font-normal text-[1.07rem] text-slate-500">
-                <span className="text-red-700 font-bold">Note:</span> This
-                extension is only operational on active websites{" "}
-                <span className="font-semibold">{"(eg:www.....com)"}</span>. It
-                is ineffective on: <br />
-                - Current page <br />
-                - New tabs without loaded websites <br />
-                - Chrome Web Store pages <br />- Chrome://pages
-              </p>
-            )}
-            {element.heading && (
-              <p className="font-semibold text-lg">{element.heading}</p>
-            )}
-
-            {element.img && (
-              <Image
-                src={element.img.src}
-                alt="image"
-                className="w-[400px] 2xl:w-[525px] ml-6 h-auto shadow-sm my-8"
-              />
-            )}
-
-            {element.content && (
-              <p className="text-slate-500 ml-6 text-base">{element.content}</p>
-            )}
-            {element.quote && (
-              <span className="text-slate-900 text-[1.3rem] ml-12 my-3 text-base">
-                <span className="italic">
-                  We automated legs, then arms, then fingers, and now brains
-                </span>{" "}
-                - Benedict Evans
-              </span>
-            )}
-            {element.spimg && (
-              <Image
-                src={element.spimg.src}
-                alt="image"
-                className="w-[50vw] h-auto"
-              />
-            )}
-            {element.link && (
-              <iframe
-                width="560"
-                height="315"
-                className="ml-6"
-                src="https://www.youtube-nocookie.com/embed/OMOGaugKpzs"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              ></iframe>
-            )}
-
-            {element.greentext && (
-              <p className="font-semibold text-lg text-green-700">
-                {element.greentext}
-              </p>
-            )}
-            {element.logindata && (
-              <div className="flex flex-col gap-2">
-                <p className="font-semibold text-lg text-green-700 ml-6 mt-6">
-                  Log in to ChatGPT and Bard if you haven&apos;t already:
-                </p>
-                <div className="flex flex-row gap-6 ml-6 mt-4 text-base font-normal">
-                  <a
-                    href="https://chat.openai.com/auth/login"
-                    rel="noreferrer"
-                    target="_blank"
-                    className="flex flex-row items-center gap-1.5"
-                  >
-                    <Image
-                      src={chatgpt}
-                      alt="ChatGPT"
-                      className="w-7 h-7 pointer"
-                    />
-                    <span>ChatGPT</span>
-                  </a>
-                  <a
-                    href="https://bard.google.com/?hl=en"
-                    rel="noreferrer"
-                    target="_blank"
-                    className="flex flex-row items-center gap-1.5"
-                  >
-                    <Image
-                      src={bard}
-                      alt="BardAI"
-                      className="w-7 h-7 pointer"
-                    />
-                    <span>Bard</span>
-                  </a>
+      <div className="text-[1.3rem] font-semibold ml-4">{data[id].heading}</div>
+      {id !== "introduction" && (
+        <div className="flex flex-col gap-7 p-4  w-[60%]">
+          {data[id].info.map((information: any, index: number) => (
+            <div
+              key={index}
+              className="flex flex-col p-4 rounded-2xl"
+              style={
+                information.note
+                  ? {
+                      border: "1px solid rgb(0,0,0,0.2)",
+                      background: "rgb(242,166,230,0.2)",
+                    }
+                  : { border: "1px solid rgb(0,0,0,0.2)" }
+              }
+            >
+              {information.heading && (
+                <div className="text-[1.1rem] font-semibold">
+                  {information.heading}
                 </div>
+              )}
+
+              {information.img && (
+                <Image
+                  src={information.img.src}
+                  alt="image_"
+                  className="max-w-[600px] w-[80%] h-auto ml-5 my-6 rounded-2xl"
+                />
+              )}
+              {information.content && (
+                <div className="text-base text-[#5A6470] ml-5 my-2">
+                  {information.content}
+                </div>
+              )}
+              {information.spimg && (
+                <Image
+                  src={information.spimg.src}
+                  alt="image_"
+                  className="max-w-[600px] w-[80%] h-auto ml-5 my-6 rounded-2xl"
+                />
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+      {id === "introduction" && (
+        <div className="flex flex-col gap-6">
+          <div
+            className="flex flex-row justify-between p-6 rounded-xl"
+            style={{ border: "1px solid rgb(0,0,0,0.1)" }}
+          >
+            <div className="flex flex-col w-[50%] gap-3">
+              <div className="text-lg font-semibold">How to Activate</div>
+              <div className="text-base font-semibold mt-4">
+                {"a) Pin the extension"}
               </div>
-            )}
-          </aside>
-        );
-      })}
+              <div>{"You can pin the extension for quick access"}</div>
+              <div className="text-base font-semibold mt-4">{"b) Login"}</div>
+              <div>
+                {
+                  "The extension does not require you to pay any premium. It directly connects with your Bard and ChatGPT account"
+                }
+              </div>
+              <div className="flex flex-row gap-8">
+                <Link
+                  target="_blank"
+                  href="https://chat.openai.com/"
+                  className="flex flex-row items-center gap-2"
+                >
+                  <Image src={chatgpt} alt="chatgpt" className="h-7 w-7" />
+                  <div>Chat GPT</div>
+                </Link>
+                <Link
+                  target="_blank"
+                  href="https://bard.google.com/"
+                  className="flex flex-row items-center gap-2"
+                >
+                  <Image src={bard} alt="bard" className="h-7 w-7" />
+                  <div>Bard</div>
+                </Link>
+              </div>
+            </div>
+            <div className="flex flex-">
+              <Image
+                src={introduction}
+                alt="Login to Bard and ChatGPT"
+                className="w-[90%] h-auto"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col gap-3 font-semibold mx-auto mt-3">
+            <div className="text-sm">
+              Save 5-8% of your day, but 70% on the part of the job you hate the
+              most:{" "}
+              <span className="text-[#AD0C0C]">
+                inefficient and repetitive stuff
+              </span>
+            </div>
+            <div className="flex flex-row gap-7 mx-auto cursor-default">
+              <div
+                className="py-2 px-6 rounded-md"
+                style={{ border: "1px solid rgb(0,0,0,0.1)" }}
+              >
+                Press <span className="text-[#800DB6]">❛ALT + Q ❜</span> to get
+                started
+              </div>
+              <div
+                className="py-2 px-6 rounded-md"
+                style={{ border: "1px solid rgb(0,0,0,0.1)" }}
+              >
+                Press <span className="text-[#800DB6]">❛ALT + W❜</span> for Full
+                Screen
+              </div>
+            </div>
+          </div>
+          <div
+            className="flex flex-row justify-between p-6 my-10 rounded-xl bg-[#f2a6e716]"
+            style={{ border: "1px solid rgb(0,0,0,0.1)" }}
+          >
+            <div className="text-base cursor-default text-[#454545bd]">
+              <div className="my-2">
+                <span className="rounded-md bg-[#e51616b9] text-white px-2 py-0.5">
+                  Adjust shortcuts:
+                </span>
+              </div>
+              <div className="flex flex-col gap-2 mb-3 mt-4">
+                <div>Step 1: Go to: chrome://extensions/shortcuts</div>
+                <div>Step 2: Change the shortcuts as per your convenience</div>
+              </div>
+              <div className="text-sm">
+                Note: If you are a Bing/Naver user, kindly replace "chrome" with
+                Bing or Naver. eg: Edge://extensions/shortcuts
+              </div>
+            </div>
+            <div className="flex">
+              <Image
+                src={intro}
+                alt="Login to Bard and ChatGPT"
+                className="w-[90%] h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
