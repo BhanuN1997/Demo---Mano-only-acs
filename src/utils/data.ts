@@ -9,11 +9,7 @@ import settings from "../../public/images/settings.png";
 
 export const data: any = {
   introduction: {
-    info: [
-      {
-        page1: true,
-      },
-    ],
+    heading: "Introduction",
   },
   chatwindow: {
     heading: "Chat Window",

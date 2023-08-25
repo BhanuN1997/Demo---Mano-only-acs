@@ -1,17 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import Information from "./Information";
 import { slides } from "../utils/slides";
+import { ActiveTabContext } from "@/utils/context";
 
 function MainPanel() {
-  const [activeTab, setActiveTab] = React.useState({
-    index: 0,
-    title: "introduction",
-  });
-  const handleClick = (element: { index: number; title: string }) => {
-    setActiveTab(element);
-  };
+  const { activeTab, setActiveTab } = useContext(ActiveTabContext);
   return (
     <div className="h-screen p-5 pt-16 grow flex flex-col items-center">
       <section
@@ -22,7 +17,7 @@ function MainPanel() {
           return (
             <div
               key={element.key}
-              onClick={() => handleClick({ index, title: element.key })}
+              onClick={() => setActiveTab({ index, title: element.key })}
               className="relative w-[15vw] flex items-center justify-center cursor-pointer"
             >
               <div
@@ -42,7 +37,7 @@ function MainPanel() {
           );
         })}
       </section>
-      <section className="w-[75vw] pt-16 flex flex-col gap-3 overflow-y-auto overflow-x-hidden">
+      <section className="w-[75vw] pt-16 px-4 flex flex-col gap-3 overflow-y-auto overflow-x-hidden">
         <Information id={activeTab.title} />
       </section>
     </div>
