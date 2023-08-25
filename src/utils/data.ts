@@ -57,10 +57,11 @@ export const data: any = {
     heading: "ALT + S  Organizer",
     info: [
       {
-        content:
-          "1. Alt + S is an email & Link automation feature. You can save your most-used text messages and links, and access them quickly using the Alt + S keyboard shortcut.\n2. Once you oppress Alt + S in the text field, you can search for the shortcut using the Shortcut Key you assigned to it.",
-      },
-      {
+        points: [
+          "1. Alt + S is an email & Link automation feature. You can save your most-used text messages and links, and access them quickly using the Alt + S keyboard shortcut.",
+          "2. Once you oppress Alt + S in the text field, you can search for the shortcut using the Shortcut Key you assigned to it.",
+        ],
+        note: "Note: The feature is in Beta - We will launch the stable version in the upcoming weeks.",
         spimg: { exists: true, src: imgG },
       },
     ],

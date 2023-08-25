@@ -13,19 +13,12 @@ function Information({ id }: { id: string }) {
     <>
       <div className="text-[1.3rem] font-semibold ml-4">{data[id].heading}</div>
       {id !== "introduction" && (
-        <div className="flex flex-col gap-7 p-4  w-[60%]">
+        <div className="flex flex-col gap-7 p-4 w-[60%]">
           {data[id].info.map((information: any, index: number) => (
             <div
               key={index}
               className="flex flex-col p-4 rounded-2xl"
-              style={
-                information.note
-                  ? {
-                      border: "1px solid rgb(0,0,0,0.2)",
-                      background: "rgb(242,166,230,0.2)",
-                    }
-                  : { border: "1px solid rgb(0,0,0,0.2)" }
-              }
+              style={{ border: "1px solid rgb(0,0,0,0.2)" }}
             >
               {information.heading && (
                 <div className="text-[1.1rem] font-semibold">
@@ -45,6 +38,20 @@ function Information({ id }: { id: string }) {
                   {information.content}
                 </div>
               )}
+              {information.points &&
+                information.points.map((element: string, index: number) => (
+                  <div
+                    key={index}
+                    className="text-base ml-5 my-1 text-[#5A6470]"
+                  >
+                    {element}
+                  </div>
+                ))}
+              {information.note && (
+                <div className="text-sm ml-5 my-3 text-[#5A6470]">
+                  {information.note}
+                </div>
+              )}
               {information.spimg && (
                 <Image
                   src={information.spimg.src}
@@ -59,7 +66,7 @@ function Information({ id }: { id: string }) {
       {id === "introduction" && (
         <div className="flex flex-col gap-6">
           <div
-            className="flex flex-row justify-between p-6 rounded-xl"
+            className="flex flex-row justify-between p-6 rounded-xl bg-[rgb(205,187,255,0.2)]"
             style={{ border: "1px solid rgb(0,0,0,0.1)" }}
           >
             <div className="flex flex-col w-[50%] gap-3">
@@ -130,7 +137,7 @@ function Information({ id }: { id: string }) {
             className="flex flex-row justify-between p-6 my-10 rounded-xl bg-[#f2a6e716]"
             style={{ border: "1px solid rgb(0,0,0,0.1)" }}
           >
-            <div className="text-base cursor-default text-[#454545bd]">
+            <div className="text-base cursor-default text-[#454545d1]">
               <div className="my-2">
                 <span className="rounded-md bg-[#e51616b9] text-white px-2 py-0.5">
                   Adjust shortcuts:
