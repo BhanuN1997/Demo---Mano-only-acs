@@ -1,13 +1,13 @@
 export const navigations = [
   {
-    heading: "Introduction",
+    heading: "1) Introduction",
     key: "introduction",
     subheadings: ["a) Pin the extension", "b) Login"],
   },
   ,
   {
     key: "chatwindow",
-    heading: "Chat Window",
+    heading: "2) Chat Window",
     subheadings: [
       "a) Choose AI Model",
       "b) Full Screen",
@@ -19,12 +19,12 @@ export const navigations = [
   },
   {
     key: "saveandorganize",
-    heading: "Save & organise",
+    heading: "3) Save & organise",
     subheadings: [],
   },
   {
     key: "settings",
-    heading: "Settings",
+    heading: "4) Settings",
     subheadings: [],
   },
 ];

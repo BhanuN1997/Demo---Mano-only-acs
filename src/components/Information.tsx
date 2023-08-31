@@ -64,24 +64,30 @@ function Information({ id }: { id: string }) {
         </div>
       )}
       {id === "introduction" && (
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 text-[#5A6470]">
           <div
             className="flex flex-row justify-between p-6 rounded-xl bg-[rgb(205,187,255,0.2)]"
             style={{ border: "1px solid rgb(0,0,0,0.1)" }}
           >
             <div className="flex flex-col w-[50%] gap-3">
-              <div className="text-lg font-semibold">How to Activate</div>
-              <div className="text-base font-semibold mt-4">
+              <div className="text-lg font-semibold text-black">
+                How to Activate
+              </div>
+              <div className="text-base font-semibold mt-4 text-black">
                 {"a) Pin the extension"}
               </div>
-              <div>{"You can pin the extension for quick access"}</div>
-              <div className="text-base font-semibold mt-4">{"b) Login"}</div>
-              <div>
+              <div className="ml-4">
+                {"You can pin the extension for quick access"}
+              </div>
+              <div className="text-base font-semibold mt-4 text-black">
+                {"b) Login"}
+              </div>
+              <div className="ml-4">
                 {
                   "The extension does not require you to pay any premium. It directly connects with your Bard and ChatGPT account"
                 }
               </div>
-              <div className="flex flex-row gap-8">
+              <div className="flex flex-row gap-8 ml-4">
                 <Link
                   target="_blank"
                   href="https://chat.openai.com/"
@@ -99,13 +105,29 @@ function Information({ id }: { id: string }) {
                   <div>Bard</div>
                 </Link>
               </div>
+              <div className="flex flex-col gap-4">
+                <div className="text-base font-semibold mt-4 text-black">
+                  {"c) Adjust shortcuts"}
+                </div>
+                <div className="flex flex-col ml-4 gap-2">
+                  <div>{"Step 1: Go to: chrome://extensions/shortcuts"}</div>
+                  <div>
+                    {"Step 2: Change the shortcuts as per your convenience"}
+                  </div>
+                  <div className="2xl:text-base text-sm">
+                    Note: If you are a Bing/Naver user, kindly replace "chrome"
+                    with Bing or Naver. eg: Edge://extensions/shortcuts
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="flex flex-">
+            <div className="flex flex-col gap-16">
               <Image
                 src={introduction}
                 alt="Login to Bard and ChatGPT"
                 className="w-[90%] h-auto"
               />
+              <Image src={introduction} alt="" className="w-[90%] h-auto" />
             </div>
           </div>
           <div className="flex flex-col gap-3 font-semibold mx-auto mt-3">
