@@ -6,6 +6,7 @@ import { data } from "../utils/data";
 import Image from "next/image";
 import intro from "../../public/images/intro.png";
 import Link from "next/link";
+import shortcuts from "../../public/images/shortcuts.png";
 import introduction from "../../public/images/introduction.svg";
 
 function Information({ id }: { id: string }) {
@@ -127,7 +128,7 @@ function Information({ id }: { id: string }) {
                 alt="Login to Bard and ChatGPT"
                 className="w-[90%] h-auto"
               />
-              <Image src={introduction} alt="" className="w-[90%] h-auto" />
+              <Image src={shortcuts} alt="" className="w-[90%] h-auto" />
             </div>
           </div>
           <div className="flex flex-col gap-3 font-semibold mx-auto mt-3">
