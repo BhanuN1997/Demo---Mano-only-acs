@@ -50,6 +50,7 @@ function Information({ id }: { id: string }) {
                 ))}
               {information.note && (
                 <div className="text-sm ml-5 my-3 text-[#5A6470]">
+                  <span className="text-red-500">Note: </span>
                   {information.note}
                 </div>
               )}
@@ -154,33 +155,6 @@ function Information({ id }: { id: string }) {
                 Press <span className="text-[#800DB6]">❛ALT + W❜</span> for Full
                 Screen
               </div>
-            </div>
-          </div>
-          <div
-            className="flex flex-row justify-between p-6 my-10 rounded-xl bg-[#f2a6e716]"
-            style={{ border: "1px solid rgb(0,0,0,0.1)" }}
-          >
-            <div className="text-base cursor-default text-[#454545d1]">
-              <div className="my-2">
-                <span className="rounded-md bg-[#e51616b9] text-white px-2 py-0.5">
-                  Adjust shortcuts:
-                </span>
-              </div>
-              <div className="flex flex-col gap-2 mb-3 mt-4">
-                <div>Step 1: Go to: chrome://extensions/shortcuts</div>
-                <div>Step 2: Change the shortcuts as per your convenience</div>
-              </div>
-              <div className="text-sm">
-                Note: If you are a Bing/Naver user, kindly replace "chrome" with
-                Bing or Naver. eg: Edge://extensions/shortcuts
-              </div>
-            </div>
-            <div className="flex">
-              <Image
-                src={intro}
-                alt="Login to Bard and ChatGPT"
-                className="w-[90%] h-auto"
-              />
             </div>
           </div>
         </div>
