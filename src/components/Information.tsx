@@ -67,6 +67,31 @@ function Information({ id }: { id: string }) {
       )}
       {id === "introduction" && (
         <div className="flex flex-col gap-6 text-[#5A6470]">
+          <div className="flex flex-col gap-3 font-semibold mx-auto mt-3">
+            <div className="text-sm">
+              Save 5-8% of your day, but 70% on the part of the job you hate the
+              most:{" "}
+              <span className="text-[#AD0C0C]">
+                inefficient and repetitive stuff
+              </span>
+            </div>
+            <div className="flex flex-row gap-7 mx-auto cursor-default">
+              <div
+                className="py-2 px-6 rounded-md"
+                style={{ border: "1px solid rgb(0,0,0,0.1)" }}
+              >
+                Press <span className="text-[#800DB6]">❛ALT + Q ❜</span> to get
+                started
+              </div>
+              <div
+                className="py-2 px-6 rounded-md"
+                style={{ border: "1px solid rgb(0,0,0,0.1)" }}
+              >
+                Press <span className="text-[#800DB6]">❛ALT + W❜</span> for Full
+                Screen
+              </div>
+            </div>
+          </div>
           <div
             className="flex flex-row justify-between p-6 rounded-xl bg-[rgb(205,187,255,0.2)]"
             style={{ border: "1px solid rgb(0,0,0,0.1)" }}
@@ -130,31 +155,6 @@ function Information({ id }: { id: string }) {
                 className="w-[90%] h-auto"
               />
               <Image src={shortcuts} alt="" className="w-[90%] h-auto" />
-            </div>
-          </div>
-          <div className="flex flex-col gap-3 font-semibold mx-auto mt-3">
-            <div className="text-sm">
-              Save 5-8% of your day, but 70% on the part of the job you hate the
-              most:{" "}
-              <span className="text-[#AD0C0C]">
-                inefficient and repetitive stuff
-              </span>
-            </div>
-            <div className="flex flex-row gap-7 mx-auto cursor-default">
-              <div
-                className="py-2 px-6 rounded-md"
-                style={{ border: "1px solid rgb(0,0,0,0.1)" }}
-              >
-                Press <span className="text-[#800DB6]">❛ALT + Q ❜</span> to get
-                started
-              </div>
-              <div
-                className="py-2 px-6 rounded-md"
-                style={{ border: "1px solid rgb(0,0,0,0.1)" }}
-              >
-                Press <span className="text-[#800DB6]">❛ALT + W❜</span> for Full
-                Screen
-              </div>
             </div>
           </div>
         </div>
