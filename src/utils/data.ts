@@ -2,8 +2,8 @@ import imgA from "../../public/demo-images/a.png";
 import imgB from "../../public/demo-images/b.png";
 import imgC from "../../public/demo-images/c.png";
 import imgD from "../../public/demo-images/d.png";
-import imgE from "../../public/demo-images/e.png";
 import imgF from "../../public/demo-images/f.png";
+import imgH from "../../public/demo-images/h.png";
 import imgG from "../../public/demo-images/image.jpg";
 import settings from "../../public/images/settings.png";
 
@@ -40,13 +40,7 @@ export const data: any = {
         img: { exists: true, src: imgD },
       },
       {
-        heading: "e) Chat with site",
-        content:
-          "Click on the globe icon to get the context of the page that you are reading and to ask Bard any questions about the same.",
-        img: { exists: true, src: imgE },
-      },
-      {
-        heading: "f) Chat with PDF",
+        heading: "e) Chat with PDF",
         content:
           "Click on the page icon to access this feature, wherein you can upload any PDF from your computer and chat with it.",
         img: { exists: true, src: imgF },
@@ -54,16 +48,14 @@ export const data: any = {
     ],
   },
   saveandorganize: {
-    heading: "ALT + S  Organizer",
     info: [
       {
-        points: [
-          "1. Alt + S is an email & Link automation feature. You can save your most-used text messages and links, and access them quickly using the Alt + S keyboard shortcut.",
-          "2. Once you oppress Alt + S in the text field, you can search for the shortcut using the Shortcut Key you assigned to it.",
-        ],
+        heading: "a) Automation",
+        content: "Click (a) to switch to automation mode",
+        img: { exists: true, src: imgH },
         note: "The feature is in Beta - We will launch the stable version in the upcoming weeks.",
-        spimg: { exists: true, src: imgG },
       },
+      { spimg: { exists: true, src: imgG } },
     ],
   },
 
